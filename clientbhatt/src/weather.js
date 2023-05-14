@@ -5,7 +5,7 @@ let error=false ;
 const getApiData = async (city, units = 'metric') => {
   
     const  placedata={city,apiKey,units};
-    console.log(placedata)
+
     const data = await fetch('http://localhost:5000/temp'
     ,
     {

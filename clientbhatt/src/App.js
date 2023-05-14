@@ -3,7 +3,7 @@ import rainyBg from "./assets/rainy.jpg";
 import Descriptions from "./components/Descriptions";
 import { useEffect, useState } from "react";
 import { getApiData } from "./weather";
-
+import './App.css'
 function App() {
 
   const [city, setCity] = useState("Kotdwara");
@@ -50,7 +50,7 @@ function App() {
     <div className="app" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
         {
-          weather.length===0  ?<h1>No Data found</h1> : (
+          weather.length===0  ?<h1 className="head">City Not Found</h1> : (
             < div className="container">
 
               <div className="section section_inputs">
