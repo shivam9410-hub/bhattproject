@@ -1,0 +1,114 @@
+:root {
+  --sectionOverlay: rgba(0, 0, 0, 0.7);
+  --backgroundOverlay: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--backgroundOverlay);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+
+/* middle temprature and input*/
+
+.section {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  color: #F9F5EB;
+}
+
+.section_temprature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #bdc3c7;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+
+/* top city search bar */
+.section_inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.section_inputs>input {
+  border: px solid beige;
+  border-radius: 0.8rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  color: #f6efdd;
+  font-size: 18px;
+}
+
+.section_inputs>button {
+  background-color: beige;
+  padding: 0.5rem 2.2rem;
+  border-radius: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section_inputs>button:hover {
+  cursor: pointer;
+  background-color: bisque;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon>h3 {
+  font-weight: 370;
+  text-transform: capitalize;
+}
+
+.temprature>h2 {
+  font-size: 3rem;
+}
