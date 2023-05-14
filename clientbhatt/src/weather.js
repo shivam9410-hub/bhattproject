@@ -21,8 +21,10 @@ const getApiData = async (city, units = 'metric') => {
  if(error){
     return [];
  }
+
          if(data.data['cod']==404)
-         return []
+         return [];
+
 
     const { weather, main: { temp, feel_like, temp_min, temp_max, pressure, humidty }, wind: { speed }, sys: { country }, name, } = data.data;
 
