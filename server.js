@@ -34,16 +34,17 @@ console.log(place)
   }
 
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=${units}`;
+  let error=false ;
   const data = await fetch(URL)
     .then((d) => {
       return d.json();
-    })
+    }) .catch((err)=>{ error =true; return err})
     .then((d) => {
       console.log(d);
       return d;
     });
-
-  const tempofplace = JSON.stringify({ data: data });
+  
+    const tempofplace = JSON.stringify({ data: data });
   cache.put(place, tempofplace, 5 * 60 * 1000);
   return res.send(tempofplace);
 });

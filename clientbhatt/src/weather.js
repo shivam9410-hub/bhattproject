@@ -13,17 +13,15 @@ const getApiData = async (city, units = 'metric') => {
         body: JSON.stringify(placedata),
         method: "POST",
       }
-    ).then((res) => res.json()).then((data) => data) .catch((err)=>{
-        console.log(err) ;
-        error=true;
-    });
+    ).then((res) => res.json()).then((data) => data) 
 
  if(error){
     return [];
  }
 
-         if(data.data['cod']==404)
-         return [];
+        if(data.data['cod']==='404')
+        {       console.log("eEROOR") ;
+            return [];}
 
 
     const { weather, main: { temp, feel_like, temp_min, temp_max, pressure, humidty }, wind: { speed }, sys: { country }, name, } = data.data;

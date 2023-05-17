@@ -4,9 +4,11 @@ import './descriptions.css';
 import { FaArrowUp, FaArrowDown, FaWind } from 'react-icons/fa';
 import { BiHappy } from "react-icons/bi";
 import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 const Descriptions = ({ weather, units }) => {
-    if(weather===undefined  || units ===undefined)
+      const weatherdata= useSelector((s)=>s) ;
+    if(weatherdata===undefined  || units ===undefined)
     return <div className='center'> <h1>Loading...</h1></div> 
     const tempUnit = units === 'metric' ? '°C' : '°F'
     const windUnit = units === 'metric' ? 'm/s' : 'm/h'
@@ -16,14 +18,14 @@ const Descriptions = ({ weather, units }) => {
             id: 1,
             icon: <FaArrowDown />,
             title: "min",
-            data: weather.temp_min.toFixed(),
+            data: weather.temp_min,
             unit: tempUnit,
         },
         {
             id: 2,
             icon: <FaArrowUp />,
             title: "max",
-            data: weather.temp_max.toFixed(),
+            data: weather.temp_max,
             unit: tempUnit,
         },
         {
@@ -51,7 +53,7 @@ const Descriptions = ({ weather, units }) => {
             id: 6,
             icon: <FaWind />,
             title: "wind speed",
-            data: weather.speed.toFixed(),
+            data: weather.speed,
             unit: windUnit,
         },
     ];
@@ -59,7 +61,7 @@ const Descriptions = ({ weather, units }) => {
     return (
         <div className="section section_descriptions">
 
-     {cards==undefined ?<h1>Loading...</h1>:(
+     {cards===undefined ?<h1>Loading...</h1>:(
 
 cards.map(({ id, icon, title, data, unit }) => (
     <div key={id} className="card">
